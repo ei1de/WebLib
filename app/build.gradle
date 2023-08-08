@@ -12,8 +12,8 @@ android {
         applicationId "com.helper.weblib"
         minSdk 24
         targetSdk 33
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -55,7 +55,7 @@ afterEvaluate {
 
                 groupId = 'com.github.ei1de'
                 artifactId = 'web_lib'
-                version = "1.0"
+                version = "1.1"
             }
         }
     }

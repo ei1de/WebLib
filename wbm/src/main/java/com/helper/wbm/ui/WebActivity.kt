@@ -136,7 +136,7 @@ class WebActivity : AppCompatActivity(), ClientsController {
             false -> {
                 if (backUrl == null) {
                     saveUrl?.invoke(mainUrl)
-                    sendFinish?.invoke(binding.webView.settings.userAgentString)
+                    sendFinish?.invoke(url, binding.webView.settings.userAgentString)
                     backUrl = url
                 }
             }
@@ -159,7 +159,7 @@ class WebActivity : AppCompatActivity(), ClientsController {
         private var record: ((t: Throwable) -> Unit)? = null
         private var sendPermission: ((Boolean) -> Unit)? = null
         private var sendOpen: (() -> Unit)? = null
-        private var sendFinish: ((String) -> Unit)? = null
+        private var sendFinish: ((String,String) -> Unit)? = null
         private var closeWeb: (() -> Unit)? = null
         private var saveUrl: ((String) -> Unit)? = null
 
@@ -169,7 +169,7 @@ class WebActivity : AppCompatActivity(), ClientsController {
             rec: ((t: Throwable) -> Unit)? = null,
             sendP: ((Boolean) -> Unit)? = null,
             sendO: (() -> Unit)? = null,
-            sendFi: ((String) -> Unit)? = null,
+            sendFi: ((String,String) -> Unit)? = null,
             close: (() -> Unit)? = null,
             save: ((String) -> Unit)? = null
         ): Intent {

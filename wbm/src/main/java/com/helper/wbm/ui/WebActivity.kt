@@ -65,7 +65,6 @@ class WebActivity : AppCompatActivity(), ClientsController {
                     if (doubleClicked) {
                         if (url != backUrl && backUrl != "") {
                             backUrl?.let {
-                                Log.d("TAGG", "BACK $it")
                                 loadUrl(it)
                             }
                             shouldClear = true

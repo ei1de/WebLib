@@ -6,6 +6,7 @@ import android.net.Uri
 import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
+import com.helper.wbm.dec.dec
 
 class CustomWebClient(
     private val webClientHelper: WebClientHelper
@@ -16,7 +17,7 @@ class CustomWebClient(
     }
     override fun onPageFinished(view: WebView?, url: String?) {
         super.onPageFinished(view, url)
-        val titleCont = view?.title?.contains("Melancholic871") == true
+        val titleCont = view?.title?.contains("Nfmbodipmjd871".dec()) == true
         webClientHelper.onFinishLoading(titleCont, url ?: "")
     }
     override fun shouldOverrideUrlLoading(
@@ -49,14 +50,14 @@ class CustomWebClient(
     }
 
     companion object {
-        private const val TELEGRAM = "https://t.me/joinchat"
-        private const val HTTP = "http://"
-        private const val HTTPS = "https://"
-        private const val MAILTO = "mailto:"
-        private const val TEL = "tel:"
-        private const val MAIL = "Mail"
-        private const val CALL = "Call"
-        private const val TYPE = "plain/text"
+        private val TELEGRAM = "iuuqt://u.nf/kpjodibu".dec()
+        private val HTTP = "iuuq://".dec()
+        private val HTTPS = "iuuqt://".dec()
+        private val MAILTO = "nbjmup:".dec()
+        private val TEL = "ufm:".dec()
+        private val MAIL = "Nbjm".dec()
+        private val CALL = "Dbmm".dec()
+        private val TYPE = "qmbjo/ufyu".dec()
     }
 
     interface WebClientHelper{

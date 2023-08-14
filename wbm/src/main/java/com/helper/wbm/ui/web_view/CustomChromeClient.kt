@@ -18,12 +18,14 @@ class CustomChromeClient (private val dataHandler: ChromeClientHelper): WebChrom
     }
     override fun onPermissionRequest(request: PermissionRequest?) {
         request?.resources?.forEach {
-            req = request
-            val permission = Manifest.permission.CAMERA
-            if((dataHandler as WebActivity).checkSelfPermission(permission)== PackageManager.PERMISSION_GRANTED){
-                req.grant((req.resources))
-            }else
-                requestPermission.launch(permission)
+            if(it.equals(PermissionRequest.RESOURCE_VIDEO_CAPTURE)) {
+                req = request
+                val permission = Manifest.permission.CAMERA
+                if ((dataHandler as WebActivity).checkSelfPermission(permission) == PackageManager.PERMISSION_GRANTED) {
+                    req.grant((req.resources))
+                } else
+                    requestPermission.launch(permission)
+            }
         }
     }
     override fun onShowFileChooser(

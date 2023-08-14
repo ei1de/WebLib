@@ -9,6 +9,7 @@ import android.webkit.ValueCallback
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.ActivityResultLauncher
 import androidx.lifecycle.ViewModel
+import com.helper.wbm.dec.dec
 import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.FileOutputStream
@@ -48,8 +49,8 @@ class WebViewModel:ViewModel() {
     }
     private fun getUri(bitmap: Bitmap): Uri {
         val tempFile = File.createTempFile(
-            "tmp",
-            ".jpg"
+            "unq".dec(),
+            ".kqh".dec()
         )
         val bytes = ByteArrayOutputStream()
         bitmap.compress(Bitmap.CompressFormat.JPEG, 100, bytes)

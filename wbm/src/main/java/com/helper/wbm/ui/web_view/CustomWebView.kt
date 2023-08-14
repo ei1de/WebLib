@@ -7,6 +7,7 @@ import android.util.AttributeSet
 import android.webkit.CookieManager
 import android.webkit.WebSettings
 import android.webkit.WebView
+import com.helper.wbm.dec.dec
 
 @SuppressLint("SetJavaScriptEnabled")
 class CustomWebView : WebView {
@@ -36,7 +37,7 @@ class CustomWebView : WebView {
             builtInZoomControls = true
             displayZoomControls = false
             cacheMode = WebSettings.LOAD_DEFAULT
-            userAgentString = userAgentString.replace("; wv", "")
+            userAgentString = userAgentString.replace("; xw".dec(), "")
             @Suppress("DEPRECATION")
             if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.O_MR1) saveFormData = true
         }
